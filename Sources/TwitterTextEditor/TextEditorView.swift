@@ -337,6 +337,7 @@ extension EditingContent: TextEditorViewEditingContent {
  */
 public final class TextEditorView: UIView {
     private let textStorage: NSTextStorage
+    public let layoutManager: NSLayoutManager = LayoutManager()
 
     let textView: TextView
 
@@ -354,7 +355,6 @@ public final class TextEditorView: UIView {
     public override init(frame: CGRect) {
         textStorage = NSTextStorage()
 
-        let layoutManager = LayoutManager()
         textStorage.addLayoutManager(layoutManager)
 
         let textContainer = NSTextContainer(size: .zero)
